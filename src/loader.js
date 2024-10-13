@@ -6,7 +6,6 @@ import getRandomInt from './random.js';
 export async function movieLoader() {
     const movieId = movies[getRandomInt(0, movies.length)].id;
     
-    
 
     let options = {
         method: 'GET',
@@ -16,9 +15,8 @@ export async function movieLoader() {
         }
     }; 
     
-    fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options)
+    const moviePromise = fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options)
         .then(response => response.json())
-        .then(response => console.log(response))
         .catch(err => console.error(err));
 
     options = {
@@ -29,13 +27,18 @@ export async function movieLoader() {
         }
         };
         
-        fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`, options)
+    const crewPromise = fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`, options)
         .then(response => response.json())
-        .then(data => data.cast)
-        .then(cast => cast.sort((a, b) => b.popularity - a.popularity).slice(0, 5))
-        .then(response => console.log(response))
+        .then(data => {
+            return {
+                cast: data.cast.sort((a, b) => b.popularity - a.popularity).slice(0, 5),
+                directors: data.crew.filter(person => person.job === "Director")
+            }
+        }
+        )
         .catch(err => console.error(err));
     
+    const data = await Promise.all([moviePromise, crewPromise])
 
-    return movie;
+    return {movie: data[0], crew: data[1], movies};
 }
