@@ -10,13 +10,13 @@ export default function HintTwo({cast, directors}) {
                 <div>
                     <h3 className="">Director:</h3>
                     {directors.map(
-                        director => <Person name={director.name} profilePath={director.profile_path} />
+                        director => <Person key={director.id} name={director.name} profilePath={director.profile_path} />
                     )}
                 </div>
                 <div>
                     <h3 className="">Top cast:</h3>
                     {cast.map(
-                        actor => <Person name={actor.name} profilePath={actor.profile_path} />
+                        actor => <Person key={actor.id} name={actor.name} profilePath={actor.profile_path} />
                     )}
                 </div>
                 
