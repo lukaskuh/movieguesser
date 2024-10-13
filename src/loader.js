@@ -7,9 +7,6 @@ export async function movieLoader() {
     const movieId = movies[getRandomInt(0, movies.length)].id;
     
     
-    const movie = await fetch(`http://www.omdbapi.com/?apikey=2bb06440&i=tt1285016`)
-            .then((response) => response.json());
-    
 
     let options = {
         method: 'GET',
@@ -19,7 +16,7 @@ export async function movieLoader() {
         }
     }; 
     
-        fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options)
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
@@ -34,6 +31,8 @@ export async function movieLoader() {
         
         fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`, options)
         .then(response => response.json())
+        .then(data => data.cast)
+        .then(cast => cast.sort((a, b) => b.popularity - a.popularity).slice(0, 5))
         .then(response => console.log(response))
         .catch(err => console.error(err));
     
