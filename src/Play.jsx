@@ -16,7 +16,7 @@ export default function Play() {
             alert("False :(");
         }
         setCurrentGuess(guessCount + 1);
-        
+
     }
 
     console.log("play: " + data.movie.original_title);
@@ -24,7 +24,7 @@ export default function Play() {
     console.log(data.crew);
 
     return (
-        <div className="max-w-xl w-full margin mx-auto bg-gray-400">
+        <div className="p-3 max-w-xl w-full margin mx-auto bg-gray-400">
             <HintOne releaseYear={data.movie.release_date} genre={data.movie.genres} country={data.movie.origin_country} />
             {guessCount >= 1 && <HintTwo directors={data.crew.directors} cast={data.crew.cast} />}
             {guessCount >= 2 && <HintThree plot={data.movie.overview} />}
