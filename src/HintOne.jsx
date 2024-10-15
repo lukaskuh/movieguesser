@@ -1,4 +1,5 @@
-export default function HintOne({releaseYear, genre, country}) {
+export default function HintOne({releaseYear, genre, countries}) {
+    console.log(countries)
 
     return (
 
@@ -7,7 +8,14 @@ export default function HintOne({releaseYear, genre, country}) {
             <div>
                 <p className=""><span className="font-header">Release year: </span>{releaseYear.slice(0,4)}</p>
                 <p className=""><span className="font-header">Genre: </span>{genre.map(genre => genre.name).join(", ")}</p>
-                <p className=""><span className="font-header">Country: </span>{country}</p>
+                <p className=""><span className="font-header">Country: </span>
+                    {countries.map(country =>
+                        (
+                            <span key={country}>{country} <img className="inline" src={`https://flagsapi.com/${country}/flat/24.png`} /></span>
+                            
+                        )
+                    )}
+                 </p>
             </div>
         </div>
 
