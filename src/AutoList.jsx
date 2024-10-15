@@ -1,7 +1,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 
-export default function AutoList({movies, input, setInput, setCurrentGuess}) {
+export default function AutoList({movies, input, setInput, focus, setFocus, setCurrentGuess}) {
     if (!input) {
+        return null;
+    }
+
+    if (!focus) {
         return null;
     }
 
@@ -14,7 +18,7 @@ export default function AutoList({movies, input, setInput, setCurrentGuess}) {
             <AnimatePresence>
             {filtered.map(
                 movie =>
-                    <motion.li key={movie.id} initial={{opacity: 0, y: 50}} animate={{opacity: 1, y: 0}} onClick={() => { setCurrentGuess(movie.id); setInput(movie.original_title) }}>{movie.original_title}</motion.li>
+                    <motion.li key={movie.id} initial={{opacity: 0, y: 50}} animate={{opacity: 1, y: 0}} onClick={() => { setCurrentGuess(movie.id); setInput(movie.original_title); setFocus(false); }}>{movie.original_title}</motion.li>
             )}
             </AnimatePresence>
         </ul>
