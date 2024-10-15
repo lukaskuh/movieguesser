@@ -25,7 +25,7 @@ export default function Play() {
     console.log(data.crew);
 
     return (
-        <div className="p-3 max-w-xl w-full margin mx-auto bg-gray-400">
+        <div className="p-3 d-flex flex-col items-center justify-center w-full margin mx-auto bg-gray-400">
             <AnimatePresence>
                 <HintOne releaseYear={data.movie.release_date} genre={data.movie.genres} countries={data.movie.origin_country} key={1}/>
                 {guessCount >= 1 && <HintTwo directors={data.crew.directors} cast={data.crew.cast} key={2} />}

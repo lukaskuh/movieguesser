@@ -5,7 +5,7 @@ export default function HintOne({releaseYear, genre, countries}) {
 
     return (
 
-        <HintContainer className="w-full" >
+        <HintContainer className="w-full max-w-xl" >
             <h1>Hint 1</h1>
             <div>
                 <p className=""><span className="font-header">Release year: </span>{releaseYear.slice(0,4)}</p>
