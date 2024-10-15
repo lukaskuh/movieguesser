@@ -1,9 +1,23 @@
-import movies from './assets/movies.json' assert { type: 'json' }
+import internationalMovies from './assets/movies.json' assert { type: 'json' }
+import swedishMovies from './assets/movies_swedish.json' assert { type: 'json' }
 import getRandomInt from './random.js';
 
 // const movies = JSON.parse(require('./assets/movies.json'));
 
-export async function movieLoader() {
+export async function movieLoader({ params }) {
+    const { category } = params;
+
+    let movies;
+
+    if (category === 'international') {
+        movies = internationalMovies;
+    } else if (category === 'swedish') {
+        movies = swedishMovies;
+    } else {
+        throw new Error('Invalid category');  // Handle invalid category
+    }
+
+
     const movieId = movies[getRandomInt(0, movies.length)].id;
     
 

@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
         {
-            path: "play",
+            path: "play/:category",
             Component: Play,
             loader: movieLoader,
         }, {
