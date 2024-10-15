@@ -1,9 +1,11 @@
+import HintContainer from "./HintContainer";
+import { motion } from "framer-motion";
+
 export default function HintOne({releaseYear, genre, countries}) {
-    console.log(countries)
 
     return (
 
-        <div className="w-full">
+        <HintContainer className="w-full" >
             <h1>Hint 1</h1>
             <div>
                 <p className=""><span className="font-header">Release year: </span>{releaseYear.slice(0,4)}</p>
@@ -17,7 +19,7 @@ export default function HintOne({releaseYear, genre, countries}) {
                     )}
                  </p>
             </div>
-        </div>
+        </HintContainer>
 
     );
 

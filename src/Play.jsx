@@ -5,6 +5,7 @@ import HintThree from "./HintThree";
 import AutoCompleter from "./AutoCompleter";
 import { useState } from "react";
 import CorrectAnswer from "./CorrectAnswer";
+import { AnimatePresence } from "framer-motion";
 
 export default function Play() {
     const data = useLoaderData();
@@ -26,9 +27,11 @@ export default function Play() {
 
     return (
         <div className="p-3 max-w-xl w-full margin mx-auto bg-gray-400">
-            <HintOne releaseYear={data.movie.release_date} genre={data.movie.genres} countries={data.movie.origin_country} />
-            {guessCount >= 1 && <HintTwo directors={data.crew.directors} cast={data.crew.cast} />}
-            {guessCount >= 2 && <HintThree plot={data.movie.overview} />}
+            <AnimatePresence>
+                <HintOne releaseYear={data.movie.release_date} genre={data.movie.genres} countries={data.movie.origin_country} key={1}/>
+                {guessCount >= 1 && <HintTwo directors={data.crew.directors} cast={data.crew.cast} key={2} />}
+                {guessCount >= 2 && <HintThree plot={data.movie.overview} key={3} />}
+            </AnimatePresence>
             <AutoCompleter movies={data.movies} makeGuess={makeGuess} />
         </div>
     )

@@ -1,10 +1,11 @@
+import HintContainer from "./HintContainer";
 import Person from "./Person";
 
 export default function HintTwo({cast, directors}) {
 
 
     return (
-        <div>
+        <HintContainer>
             <h1>Hint 2</h1>
             <div className="flex flex-row gap-12 overflow-scroll">
                 <div className="flex flex-column">
@@ -25,7 +26,7 @@ export default function HintTwo({cast, directors}) {
                 </div>
                 
             </div>
-        </div>
+        </HintContainer>
     )
 
 }
