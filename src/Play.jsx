@@ -25,7 +25,7 @@ export default function Play() {
 
     return (
         <div className="p-3 max-w-xl w-full margin mx-auto bg-gray-400">
-            <HintOne releaseYear={data.movie.release_date} genre={data.movie.genres} country={data.movie.origin_country} />
+            <HintOne releaseYear={data.movie.release_date} genre={data.movie.genres} countries={data.movie.origin_country} />
             {guessCount >= 1 && <HintTwo directors={data.crew.directors} cast={data.crew.cast} />}
             {guessCount >= 2 && <HintThree plot={data.movie.overview} />}
             <AutoCompleter movies={data.movies} makeGuess={makeGuess} />
