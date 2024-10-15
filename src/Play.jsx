@@ -4,6 +4,7 @@ import HintTwo from "./HintTwo";
 import HintThree from "./HintThree";
 import AutoCompleter from "./AutoCompleter";
 import { useState } from "react";
+import CorrectAnswer from "./CorrectAnswer";
 
 export default function Play() {
     const data = useLoaderData();
@@ -11,7 +12,7 @@ export default function Play() {
 
     function makeGuess(guess) {
         if (guess === data.movie.id) {
-            alert("Correct!");
+            <CorrectAnswer movies={data.movies} />
         } else {
             alert("False :(");
         }
