@@ -5,14 +5,21 @@ export default function AutoCompleter({movies, makeGuess}) {
 
     const [currentGuess, setCurrentGuess] = useState();
     const [input, setInput] = useState("");
+    const [focus, setFocus] = useState(false);
+
     console.log("INPUT: " + input);
 
+    function handleClick(event) {
+        makeGuess(currentGuess);
+        setInput("");
+    }
+
     return (
-        <div className="fixed flex bottom-2 inset-x-0 flex-col justify-center">
-            <AutoList input={input} setCurrentGuess={setCurrentGuess} setInput={setInput} movies={movies} />
-            <div className="flex flex-row bg-white w-80">
-                <input value={input} onChange={(event) => setInput(event.target.value)} />
-                <button onClick={() => makeGuess(currentGuess)}>Guess</button>
+        <div className="bg-red-500 fixed bottom-2 left-1/2 transform -translate-x-1/2 flex flex-col justify-center w-80">
+            <AutoList input={input} setCurrentGuess={setCurrentGuess} setInput={setInput} focus={focus} setFocus={setFocus} movies={movies} />
+            <div className="flex flex-row w-full">
+                <input className="flex-grow" value={input} onChange={(event) => { setInput(event.target.value); setFocus(true); }} />
+                <button onClick={handleClick}>Guess</button>
             </div>
         </div>
     );
