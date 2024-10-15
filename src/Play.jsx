@@ -15,8 +15,8 @@ export default function Play() {
         } else {
             alert("False :(");
         }
-
         setCurrentGuess(guessCount + 1);
+        
     }
 
     console.log("play: " + data.movie.original_title);
