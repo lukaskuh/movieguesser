@@ -10,8 +10,8 @@ export default function HowToPlay() {
             </p>
             <h3>The categories</h3>
             <p>There are currently two different game modes: <br />
-            <strong>Swedish movies</strong>: in this game mode, the movie will be one of Sweden's most popular movies of all time. <br />
-            <strong>International movies</strong>: in this game mode, the movie will be one of the most popular movies of all time, internationally.
+            <strong>Swedish movies</strong>: the movie will be one of Sweden's most popular movies of all time. <br />
+            <strong>International movies</strong>: the movie will be one of the most popular movies of all time, internationally.
             </p>
             <h3>The hints</h3>
             <h5>Hint 1</h5>
