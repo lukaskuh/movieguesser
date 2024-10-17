@@ -18,7 +18,7 @@ export default function AutoList({movies, input, setInput, focus, setFocus, setC
             <AnimatePresence>
             {filtered.map(
                 movie =>
-                    <motion.li className={"px-2 py-1 hover:bg-yellow-500 overflow-hidden whitespace-nowrap w-full text-ellipsis"} key={movie.id} initial={{opacity: 0, y: 50}} animate={{opacity: 1, y: 0}} onClick={() => { setCurrentGuess(movie.id); setInput(movie.original_title); setFocus(false); }}>{movie.original_title}</motion.li>
+                    <motion.li className={"px-2 py-1 hover:bg-yellow-500 active:bg-yellow-600 overflow-hidden whitespace-nowrap w-full text-ellipsis"} key={movie.id} initial={{opacity: 0, y: 50}} animate={{opacity: 1, y: 0}} onClick={() => { setCurrentGuess(movie.id); setInput(movie.original_title); setFocus(false); }}>{movie.original_title}</motion.li>
             )}
             </AnimatePresence>
         </ul>
