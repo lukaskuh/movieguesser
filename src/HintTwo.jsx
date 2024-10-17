@@ -7,7 +7,7 @@ const container = {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15
+        staggerChildren: 0.1
       }
     }
 }
@@ -17,9 +17,9 @@ export default function HintTwo({cast, directors}) {
     return (
         <HintContainer className="d-flex flex-col justify-center items-center w-full">
             <h1 className="max-w-xl w-full d-flex flex-row justify-start items-center">Hint 2</h1>
-            <div className="w-full overflow-x-scroll">
-                <div className="inline-flex flex-row justify-center items-center gap-12">
-                    <motion.div className="flex flex-column" variants={container} initial="hidden" animate="show">
+            <div className="d-flex w-full overflow-x-scroll">
+                <motion.div className="inline-flex flex-row justify-center items-center gap-12 px-8 mx-auto" variants={container} initial="hidden" animate="show">
+                    <motion.div className="flex flex-column" variants={container}>
                         <h4 className="">Director:</h4>
                         <div className="flex flex-row gap-3">
                             {directors.map(
@@ -27,7 +27,7 @@ export default function HintTwo({cast, directors}) {
                             )}
                         </div>
                     </motion.div>
-                    <motion.div className="flex flex-column" variants={container} initial="hidden" animate="show">
+                    <motion.div className="flex flex-column" variants={container}>
                         <h4 className="">Top cast:</h4>
                         <div className="flex flex-row gap-3">
                             {cast.map(
@@ -35,11 +35,7 @@ export default function HintTwo({cast, directors}) {
                             )}
                         </div>
                     </motion.div>
-                </div>
-                {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white to-transparent"></div>
-
-                {/* Fade effect on the right */}
-                {/* <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent"></div> */}
+                </motion.div>
             </div>
         </HintContainer>
     )
