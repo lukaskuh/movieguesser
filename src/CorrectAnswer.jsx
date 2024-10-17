@@ -18,14 +18,21 @@ export default function CorrectAnswer({movies, guessCount}) {
         navigate("/");
     }
 
+    function handleRefresh() {
+        navigate(0);
+    }
+
     return (
         <div className="pb-10">
             <h1 className="pb-2">{title()}</h1>
             <h3>{movie.original_title}</h3>
             <div>
-                <img className="pb-8" src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={movie.original_title}></img>
+                <img className="mb-8 rounded-xl" src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={movie.original_title}></img>
             </div>
-            <button className="btn btn-primary !rounded-l-none" onClick={handleClick}>Home Page</button>
+            <div className="d-flex flex-row gap-2">
+                <button className="btn btn-secondary" onClick={handleClick}>Home Page</button>
+                <button className="btn btn-primary" onClick={handleRefresh}>Play again</button>
+            </div>
         </div>
     )
 }
