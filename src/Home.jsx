@@ -10,6 +10,7 @@ export default function Home() {
 
     return (
         <div className="d-flex gap-2 justify-center items-center flex-col h-screen w-screen">
+            <h1>Guess The Movie</h1>
             <div className="w-fit">
                 <select className="h-full" value={category} onChange={handleCategory} required>
                     <option value="" disabled>Choose category</option>
