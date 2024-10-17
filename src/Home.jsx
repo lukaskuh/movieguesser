@@ -13,8 +13,9 @@ export default function Home() {
             <div className="w-fit">
                 <select className="h-full" value={category} onChange={handleCategory} required>
                     <option value="" disabled>Choose category</option>
+                    <option value="international-all-time">International movies - All time</option>
+                    <option value="international-2000s">International movies - 2000s</option>
                     <option value="swedish">Swedish movies</option>
-                    <option value="international">International movies</option>
                 </select>
                 <Link className={`btn btn-primary ${!category && "disabled"}`} to={`/play/${category}`}>
                     Spela

@@ -1,4 +1,5 @@
-import internationalMovies from './assets/movies.json' assert { type: 'json' }
+import internationalMovies from './assets/movies_all_time.json' assert { type: 'json' }
+import international2000Movies from './assets/movies_2000.json' assert { type: 'json' }
 import swedishMovies from './assets/movies_swedish.json' assert { type: 'json' }
 import getRandomInt from './random.js';
 
@@ -9,8 +10,10 @@ export async function movieLoader({ params }) {
 
     let movies;
 
-    if (category === 'international') {
+    if (category === 'international-all-time') {
         movies = internationalMovies;
+    } else if (category === 'international-2000s') {
+        movies = international2000Movies;
     } else if (category === 'swedish') {
         movies = swedishMovies;
     } else {
