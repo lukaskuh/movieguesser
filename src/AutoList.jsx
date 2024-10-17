@@ -13,6 +13,10 @@ export default function AutoList({movies, input, setInput, focus, setFocus, setC
 
     console.log(filtered)
 
+    if (filtered.length === 0) {
+        return null;
+    }
+
     return (
         <ul className="w-full p-0">
             <AnimatePresence>
