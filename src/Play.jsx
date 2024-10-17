@@ -14,13 +14,18 @@ export default function Play() {
     const [showModal, setShowModal] = useState(false);
 
     function makeGuess(guess) {
-        setCurrentGuess(guessCount + 1);
-        if (guess === data.movie.id || guessCount === 2) {
+        if (guess === data.movie.id) {
             setShowModal(true);
         } else {
-            alert("False :(");
+            setCurrentGuess(guessCount + 1);
+            if (guessCount === 2) {
+                setShowModal(true);
+            } else {
+                alert("False :(");
+            }
         }
     }
+    
 
     console.log("play: " + data.movie.original_title);
     console.log(data.movie);

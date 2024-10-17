@@ -18,12 +18,12 @@ export default function Home() {
                     <option value="swedish">Swedish movies</option>
                 </select>
                 <Link className={`btn btn-primary ${!category && "disabled"}`} to={`/play/${category}`}>
-                    Spela
+                    Play
                 </Link>
             </div>
             <div className="w-fit">
                 <Link className="btn btn-secondary" to="/how-to-play">
-                    Hur spelar man?
+                    How to play
                 </Link>
             </div>
             
