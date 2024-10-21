@@ -18,7 +18,7 @@ export default function HintTwo({cast, directors}) {
         <HintContainer className="d-flex flex-col justify-center items-center w-full">
             <h1 className="max-w-xl w-full d-flex flex-row justify-start items-center">Hint 2</h1>
             <div className="d-flex w-full overflow-x-scroll">
-                <motion.div className="inline-flex flex-row justify-center items-center gap-12 px-8 mx-auto" variants={container} initial="hidden" animate="show">
+                <motion.div className="inline-flex flex-row justify-center gap-12 px-8 mx-auto" variants={container} initial="hidden" animate="show">
                     <motion.div className="flex flex-column" variants={container}>
                         <h4 className="">Director:</h4>
                         <div className="flex flex-row gap-3">
