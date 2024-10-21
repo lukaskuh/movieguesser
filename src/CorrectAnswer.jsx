@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom"
 import { useNavigate } from "react-router-dom"; 
 
-export default function CorrectAnswer({movies, guessCount}) {
+export default function CorrectAnswer({guessCount}) {
 
     const {movie} = useLoaderData()
     const navigate = useNavigate();

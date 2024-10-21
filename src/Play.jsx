@@ -21,12 +21,11 @@ export default function Play() {
             if (guessCount === 2) {
                 setShowModal(true);
             } else {
-                alert("False :(");
+                alert("Wrong guess");
             }
         }
     }
     
-
     console.log("play: " + data.movie.original_title);
     console.log(data.movie);
     console.log(data.crew);
