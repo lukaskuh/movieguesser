@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      {!isHome && <header className='d-flex w-screen justify-center py-4'><h3><Link className="no-underline text-inherit" to="/">Guess the Movie</Link></h3></header>}
+      {!isHome && <header className='d-flex w-screen justify-center py-4'><h3><Link className="no-underline text-inherit transition-colors" to="/">Guess the Movie</Link></h3></header>}
       {isLoading 
       ? (<div className='d-flex h-screen w-screen items-center justify-center'>
           <p className=''>Loading...</p>

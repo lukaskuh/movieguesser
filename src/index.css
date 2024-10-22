@@ -35,6 +35,7 @@ body {
 #root {
   width: 100%;
   margin: 0 auto;
+  background-color: rgb(250 250 250);
 }
 
 h1 {
@@ -53,13 +54,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+    background-color: rgb(250 250 250);
   }
 }
 
