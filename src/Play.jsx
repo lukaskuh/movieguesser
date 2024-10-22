@@ -38,7 +38,7 @@ export default function Play() {
 
 
     return (
-        <div className="p-3 d-flex flex-col items-center justify-center w-full margin mx-auto">
+        <div className="px-3 pt-3 pb-24 d-flex flex-col items-center justify-center w-full margin mx-auto">
             <AnimatePresence>
                 {showToaster && (
                     <motion.div
