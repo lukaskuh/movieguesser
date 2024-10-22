@@ -31,7 +31,6 @@ export default function Play() {
         }
     }
     
-
     console.log("play: " + data.movie.original_title);
     console.log(data.movie);
     console.log(data.crew);
