@@ -23,12 +23,18 @@ export default function CorrectAnswer({guessCount}) {
     }
 
     return (
-        <div className="pb-10">
-            <h1 className="pb-2">{title()}</h1>
-            <div className="d-flex flex-col items-center">
-                <h2>{movie.original_title}</h2>
-                <img className="mb-8 rounded-xl w-[300px]" src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={movie.original_title}></img>
-                <div className="d-flex flex-row gap-2">
+        <div className="pb-10 flex flex-col h-full">
+            <h2 className="pb-2">{title()}</h2>
+            <div className="flex flex-col items-center flex-grow">
+                <h3>{movie.original_title}</h3>
+                <div className="mb-8 flex justify-center items-center">
+                    <img
+                        className="rounded-xl h-[40vh] object-contain"
+                        src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                        alt={movie.original_title}
+                    />
+                </div>
+                <div className="flex flex-row gap-2">
                     <button className="btn btn-secondary" onClick={handleClick}>Home Page</button>
                     <button className="btn btn-primary" onClick={handleRefresh}>Play again</button>
                 </div>

@@ -61,7 +61,7 @@ export default function Play() {
 
             {showModal && (
                 <motion.div initial={{opacity:0}} animate={{opacity:1}} className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                    <motion.div initial={{y: 500}} animate={{y:0}} className="relative bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+                    <motion.div initial={{y: 500}} animate={{y:0}} className="relative bg-white p-6 rounded-lg shadow-lg max-w-md w-full max-h-full m-4 box-border">
 
                         <button
                             className="absolute bg-transparent top-2 right-2 text-gray-500 hover:text-gray-700 text-3xl p-2"
