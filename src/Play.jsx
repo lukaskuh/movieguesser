@@ -3,7 +3,7 @@ import HintOne from "./HintOne"
 import HintTwo from "./HintTwo";
 import HintThree from "./HintThree";
 import AutoCompleter from "./AutoCompleter";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import CorrectAnswer from "./CorrectAnswer";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -14,6 +14,7 @@ export default function Play() {
     const data = useLoaderData();
     const [guessCount, setCurrentGuess] = useState(0);
     const [showModal, setShowModal] = useState(false);
+    const hintEndRef = useRef();
     
     const [showToaster, setShowToaster] = useState(false);
 
@@ -30,10 +31,11 @@ export default function Play() {
             }
         }
     }
-    
-    console.log("play: " + data.movie.original_title);
-    console.log(data.movie);
-    console.log(data.crew);
+
+    useEffect(() => {
+        hintEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, [guessCount])
+
 
     return (
         <div className="p-3 d-flex flex-col items-center justify-center w-full margin mx-auto">
@@ -53,6 +55,7 @@ export default function Play() {
                 <HintOne releaseYear={data.movie.release_date} genre={data.movie.genres} countries={data.movie.origin_country} key={1}/>
                 {guessCount >= 1 && <HintTwo directors={data.crew.directors} cast={data.crew.cast} key={2} />}
                 {guessCount >= 2 && <HintThree plot={data.movie.overview} key={3} />}
+                <div ref={hintEndRef}></div>
             </AnimatePresence>
             <AutoCompleter movies={data.movies} makeGuess={makeGuess} />
 
