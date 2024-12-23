@@ -3,7 +3,9 @@ import international2000Movies from './assets/movies_2000.json' assert { type: '
 import swedishMovies from './assets/movies_swedish.json' assert { type: 'json' }
 import getRandomInt from './random.js';
 
-// const movies = JSON.parse(require('./assets/movies.json'));
+
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+
 
 export async function movieLoader({ params }) {
     const { category } = params;
@@ -28,7 +30,7 @@ export async function movieLoader({ params }) {
         method: 'GET',
         headers: {
             accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MGQyZDYwZmFlZjgwZTIzNWIyMWVkYTc2NWQzNWRlMiIsIm5iZiI6MTcyODMxMDQ3NS41Nzg2ODQsInN1YiI6IjY3MDNkOTBhN2NmZWE2ZjIwMjczZWI3YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v2pYdq0yz46dOjByLcFLZjJ3ULZVlTolIbUeYdM7etw'
+            Authorization: API_KEY
         }
     }; 
     
@@ -40,7 +42,7 @@ export async function movieLoader({ params }) {
         method: 'GET',
         headers: {
             accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MGQyZDYwZmFlZjgwZTIzNWIyMWVkYTc2NWQzNWRlMiIsIm5iZiI6MTcyODMxMDQ3NS41Nzg2ODQsInN1YiI6IjY3MDNkOTBhN2NmZWE2ZjIwMjczZWI3YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v2pYdq0yz46dOjByLcFLZjJ3ULZVlTolIbUeYdM7etw'
+            Authorization: API_KEY
         }
         };
         
