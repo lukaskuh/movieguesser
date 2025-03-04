@@ -1,8 +1,13 @@
-# React + Vite
+## In game images
+### Start page
+<img src="images/start_screen.png" width="600px"/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### How to Play
+<img src="images/how_to_play.png" width="600px"/>
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Game page
+<img src="images/game_1.png" width="600px"/>
+<img src="images/game_2.png" width="600px"/>
+<img src="images/game_3.png" width="600px"/>
+<img src="images/game_4.png" width="600px"/>
+<img src="images/game_5.png" width="600px"/>
