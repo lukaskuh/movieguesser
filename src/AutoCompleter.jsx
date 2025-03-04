@@ -16,7 +16,7 @@ export default function AutoCompleter({movies, makeGuess}) {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="shadow-md shadow-gray-500/45 bg-white text-l rounded fixed bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col justify-center w-11/12 max-w-[500px]">
+        <form onSubmit={handleSubmit} className="shadow-md shadow-gray-500/45 bg-white text-l rounded fixed bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col justify-center w-11/12 max-w-[500px]">
             <AutoList 
                 input={input} 
                 setCurrentGuess={setCurrentGuess} 
